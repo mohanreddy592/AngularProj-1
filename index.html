@@ -44,6 +44,13 @@
             Department: {{selectedStudent.department}}<br>
             D.O.B: {{selectedStudent.dob}}<br>
         </div>
+
+        <div>
+            <br>
+            <button ng-click="decreaseIndex()"><</button>
+            <img height="300" width="350" ng-src="{{imagesURLs[index]}}" alt="">
+            <button ng-click="increaseIndex()">></button>
+        </div>
     </div>
 
 </body>
