@@ -10,10 +10,40 @@
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <div ng-controller="MyCtrl">
-        Title: {{title}} <br>
-        Age: {{age}} <br>
-        <!--<a ng-click="sayHello()">click here</a>-->
-        <button ng-click="sayHello()">Click Me</button>
+
+        <div>
+            Title: {{title}} <br>
+            Age: {{age}} <br>
+            <!--<a ng-click="sayHello()">click here</a>-->
+            <button ng-click="sayHello()">Click Me</button><br>
+            Title: <input type="text" ng-model="title" />            
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>DOB</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="st in students">
+                        <td>{{st.name}}</td>
+                        <td>{{st.department}}</td>
+                        <td>{{st.dob}}</td>
+                        <td><button ng-click="onStudentSelect(st)">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="student-details" ng-if="selectedStudent">
+            <br>Selected student is: <br>
+            Name: {{selectedStudent.name}}<br>
+            Department: {{selectedStudent.department}}<br>
+            D.O.B: {{selectedStudent.dob}}<br>
+        </div>
     </div>
 
 </body>
