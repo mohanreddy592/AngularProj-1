@@ -1,0 +1,15 @@
+  
+<div>My custom calculator using component<div>
+<br>
+Calculator Functions:
+<div>
+    First Input <input type="number" ng-model="$ctrl.first" ng-change="$ctrl.onInputChange()"/> <br>
+    Second Input <input type="number" ng-model="$ctrl.second" ng-change="$ctrl.onInputChange()"/> <br>
+    <div ng-if="$ctrl.result" ng-class="{'calculation-result': $ctrl.isCalculated}">
+    {{$ctrl.resultText}}: {{$ctrl.result}}<br>
+    </div>
+    <button ng-click="$ctrl.calculate('add')">+</button>
+    <button ng-click="$ctrl.calculate('sub')">-</button>
+    <button ng-click="$ctrl.calculate('mul')">*</button>
+    <button ng-click="$ctrl.calculate('div')">/</button>
+</div>

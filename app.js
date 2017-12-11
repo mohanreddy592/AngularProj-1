@@ -57,6 +57,7 @@ myapp.controller('MyCtrl', function($scope){
     $scope.first;
     $scope.second;
     $scope.result;
+    $scope.isCalculated = false;
     $scope.calculate = function(action) {
         if(action === 'add') {
             console.log('adding two values');
@@ -73,5 +74,46 @@ myapp.controller('MyCtrl', function($scope){
         } else {
             console.log('No function available');
         }
+        $scope.isCalculated = true;
+    }
+    $scope.onInputChange = function() {
+        $scope.isCalculated = false;
+    }
+});
+
+// custom components will have template, templateUrl, bindings
+myapp.component('myCustomCalculator', {
+    templateUrl: 'calculator-template.html',
+    controller:'MyCustomCalculatorCtrl',
+    bindings: {
+        resultText: '@'
+    }
+});
+
+myapp.controller('MyCustomCalculatorCtrl', function(){
+    this.first;
+    this.second;
+    this.result;
+    this.isCalculated = false;
+    this.calculate = function(action) {
+        if(action === 'add') {
+            console.log('adding two values');
+            this.result = this.first + this.second;
+        } else if(action === 'sub') {
+            console.log('substracting two values');
+            this.result = this.first - this.second;
+        } else if(action === 'mul') {
+            console.log('multiplying two values');
+            this.result = this.first * this.second;
+        } else if(action === 'div') {
+            console.log('divisioning two values');
+            this.result = this.first / this.second;
+        } else {
+            console.log('No function available');
+        }
+        this.isCalculated = true;
+    }
+    this.onInputChange = function() {
+        this.isCalculated = false;
     }
 });
