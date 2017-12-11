@@ -17,7 +17,7 @@
             <!--<a ng-click="sayHello()">click here</a>-->
             <button ng-click="sayHello()">Click Me</button><br>
             Title: <input type="text" ng-model="title" />            
-        </div>
+        </div><br><br>
         <div>
             <table>
                 <thead>
@@ -37,19 +37,33 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div><br><br>
         <div id="student-details" ng-if="selectedStudent">
             <br>Selected student is: <br>
             Name: {{selectedStudent.name}}<br>
             Department: {{selectedStudent.department}}<br>
             D.O.B: {{selectedStudent.dob}}<br>
         </div>
-
+        <br><br>
         <div>
             <br>
             <button ng-click="decreaseIndex()"><</button>
             <img height="300" width="350" ng-src="{{imagesURLs[index]}}" alt="">
             <button ng-click="increaseIndex()">></button>
+        </div>
+
+        <br><br>
+        Calculator Functions:
+        <div>
+            First Input <input type="number" ng-model="first"/> <br>
+            Second Input <input type="number" ng-model="second"/> <br>
+            <div ng-if="result">
+            Result is: {{result}}<br>
+            </div>
+            <button ng-click="calculate('add')">+</button>
+            <button ng-click="calculate('sub')">-</button>
+            <button ng-click="calculate('mul')">*</button>
+            <button ng-click="calculate('div')">/</button>
         </div>
     </div>
 

@@ -53,4 +53,25 @@ myapp.controller('MyCtrl', function($scope){
             $scope.index = $scope.index - 1;        
         }
     }
+
+    $scope.first;
+    $scope.second;
+    $scope.result;
+    $scope.calculate = function(action) {
+        if(action === 'add') {
+            console.log('adding two values');
+            $scope.result = $scope.first + $scope.second;
+        } else if(action === 'sub') {
+            console.log('substracting two values');
+            $scope.result = $scope.first - $scope.second;
+        } else if(action === 'mul') {
+            console.log('multiplying two values');
+            $scope.result = $scope.first * $scope.second;
+        } else if(action === 'div') {
+            console.log('divisioning two values');
+            $scope.result = $scope.first / $scope.second;
+        } else {
+            console.log('No function available');
+        }
+    }
 });
